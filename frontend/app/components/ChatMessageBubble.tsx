@@ -112,7 +112,7 @@ export function ChatMessageBubble(props: {
 
       <Heading fontSize="lg" fontWeight={"medium"} mb={1} color={"blue.300"} paddingTop={"20px"}>Answer</Heading></>)
 }
-      {isUser ? <Heading size={"lg"} fontWeight={"medium"} color={"black"}>{standaloneMessage}</Heading> : <div
+      {isUser ? <Heading size={"lg"} fontWeight={"medium"} color={"green.700"}>{standaloneMessage}</Heading> : <div
           className="whitespace-pre-wrap"
           style={{"color": "black"}}
           dangerouslySetInnerHTML={{ __html: standaloneMessage }}
@@ -154,7 +154,7 @@ export function ChatMessageBubble(props: {
         </div>
       )}
 
-      {!isUser && <Divider marginTop={"20px"} marginBottom={"20px"}/>}
+      {!isUser && <Divider marginTop={"20px"} marginBottom={"20px"} borderColor={"gray"}/>}
     </VStack>
   );
 }
