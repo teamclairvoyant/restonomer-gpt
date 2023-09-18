@@ -1,5 +1,4 @@
 import logging
-import os
 
 from langchain.document_loaders import DirectoryLoader
 from langchain.document_loaders import TextLoader
@@ -8,11 +7,7 @@ from langchain.indexes import SQLRecordManager, index
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import PGEmbedding
 
-from constants import APIKEY
-
 logger = logging.getLogger(__name__)
-
-os.environ["OPENAI_API_KEY"] = APIKEY
 
 POSTGRES_CONNECTION_URL = "postgresql://postgres:postgres@0.0.0.0:5432/postgres"
 
