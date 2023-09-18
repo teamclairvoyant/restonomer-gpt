@@ -19,7 +19,7 @@ POSTGRES_CONNECTION_URL = "postgresql://postgres:postgres@0.0.0.0:5432/postgres"
 
 def ingest_docs():
     loader = DirectoryLoader(
-        path="docs",
+        path="restonomer-docs",
         show_progress=True,
         use_multithreading=True,
         loader_cls=TextLoader,
