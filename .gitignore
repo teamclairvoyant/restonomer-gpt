@@ -1,0 +1,5 @@
+frontend/.next
+frontend/node_modules
+frontend/next-env.d.ts
+frontend/yarn.lock
+Pipfile.lock
