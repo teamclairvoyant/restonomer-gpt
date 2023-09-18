@@ -152,7 +152,7 @@ async def chat_endpoint(request: Request):
         job_done = object()
 
         llm = ChatOpenAI(
-            # model="gpt-4",
+            model="gpt-4",
             streaming=True,
             temperature=0,
             callbacks=[QueueCallback(q)],
