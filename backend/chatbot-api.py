@@ -1,4 +1,3 @@
-import os
 from collections.abc import Generator
 from queue import Queue, Empty
 from threading import Thread
