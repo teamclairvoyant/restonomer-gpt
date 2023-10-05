@@ -8,7 +8,7 @@ from fastapi.responses import StreamingResponse
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.callbacks.tracers.run_collector import RunCollectorCallbackHandler
 from langchain.chains import RetrievalQA
-from langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings import GPT4AllEmbeddings
 from langchain.llms.gpt4all import GPT4All
 from langchain.schema.runnable import RunnableConfig
 from langchain.vectorstores import PGEmbedding
@@ -74,9 +74,9 @@ async def chat_endpoint(request: Request):
 
         def task():
             vectorstore = PGEmbedding(
-                embedding_function=OpenAIEmbeddings(),
+                embedding_function=GPT4AllEmbeddings(),
                 connection_string=POSTGRES_CONNECTION_URL,
-                collection_name="restonomer",
+                collection_name="restonomer_gpt4all",
             )
 
             retriever = vectorstore.as_retriever(
