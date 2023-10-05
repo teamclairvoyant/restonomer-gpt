@@ -1,13 +1,9 @@
-import logging
-
 from langchain.document_loaders import DirectoryLoader
 from langchain.document_loaders import TextLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.indexes import SQLRecordManager, index
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import PGEmbedding
-
-logger = logging.getLogger(__name__)
 
 POSTGRES_CONNECTION_URL = "postgresql://postgres:postgres@0.0.0.0:5432/postgres"
 
@@ -38,6 +34,7 @@ def ingest_docs():
         f"postgres/restonomer",
         db_url=POSTGRES_CONNECTION_URL,
     )
+
     record_manager.create_schema()
 
     index(
